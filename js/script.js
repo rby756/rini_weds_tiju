@@ -6,20 +6,13 @@
       $('.sakura-falling').sakura();
 })(jQuery);
 
-/**
- *
- * Despite so many new Bollywood and English song options, I prefered to use two-decade-old song, Din Shagna Da!
- *
- * Ever attended a North Indian Wedding? As soon as the DJ plays Din Shagna Da song, it means that the much-awaited moment is here
- * and the bride is all set to put her first foot forward to the wedding venue under a breathtaking phoolon ki chaadar.
- * Let's keep the sky-high status of this song untouched!
- *
- * When the website is backed up with a soul-stirring track, the feeling becomes absolutely surreal. 
- * Choose a heart-touching track! 🎵 ❤️
- *
- * Listen here: https://youtu.be/X0MDALpV29s
- *
- */
+
+$(document).on('click', function(){
+	//document.style.overflow-y="hidden";
+    document.getElementById("my_audio").play();
+    console.log('Paattu Work aayi');
+});
+
 
 function animateOpen(){
 	console.log("animation");
@@ -52,14 +45,8 @@ function animateOpen(){
 }
  
 
-$(document).on('click', function(){
-    document.getElementById("my_audio").play();
-    console.log('Paattu Work aayi');
-});
-
-
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 24, 2021 09:30:00").getTime();
+var countDownDate = new Date("Jul 7, 2022 9:30:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -85,6 +72,32 @@ var x = setInterval(function() {
         document.getElementById("time").innerHTML = "Bless the married couple for happy life!";
     }
 }, 1000);
+
+var slideIndex = 0;
+showSlides();
+
+
+function playAudio(){
+	 document.getElementById("my_audio").play();
+}
+
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  //var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  //for (i = 0; i < dots.length; i++) {
+    //dots[i].className = dots[i].className.replace(" active", "");
+ // }
+  slides[slideIndex-1].style.display = "block";  
+  //dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 
 // being a bit cool :p  
 var styles = [
@@ -118,9 +131,9 @@ var styles2 = [
     , 'font-size: 32px'
 ].join(';');
 
-console.log('\n\n%c SAVE THE DATE: 24th Nov, 2021!', styles);
+console.log('\n\n%c SAVE THE DATE: 25th Mar, 2022!', styles);
 
-console.log('%cYour presence is requested!%c\n\nRegards: Deekshith', styles1, styles2);
+console.log('%cYour presence is requested!%c\n\nRegards: Aswathy', styles1, styles2);
 
 console.log(
     `%cSangathi set aayi!\n\n`,
